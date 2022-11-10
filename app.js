@@ -1,7 +1,19 @@
 // javascript
 // alert(message);
+
+// const btnArray = ['.btnRock', '.btnPaper', '.btnScissors'];
+
 let playerScore = 0;
 let computerScore = 0;
+
+const buttons = document.querySelectorAll('.btn')
+// console.log(buttons)
+
+buttons.forEach(btn => btn.addEventListener('click', (evt) => {
+    playerSelection = evt.target.innerText.toLowerCase()
+    playGame(playerSelection)
+}));
+
     
 function playRound(playerSelection, computerSelection) {
     if (playerSelection == computerSelection) {
@@ -27,19 +39,25 @@ function getComputerChoice(array) {
     return computerSelection;
 }
 
-const array = ['rock', 'paper', 'scissors'];
-for (let i = 0; i < 5; i++) {
+function playGame(playerSelection){
+    const array = ['rock', 'paper', 'scissors'];
+
+    // for (let i = 0; i < 5; i++) {
+
     let computerSelection = getComputerChoice(array);
-    let playerSelection = prompt("rock, paper or scissors?").toLowerCase()
-    while (!array.includes(playerSelection)) {
-        playerSelection = prompt("invalid input. rock, paper or scissors?").toLowerCase()
-    }
+    // let playerSelection = selection.toLowerCase()
+
     console.log(`playerSelection: ${playerSelection}, computerSelection: ${computerSelection}`)
+    
     console.log(playRound(playerSelection, computerSelection));
+    
+    if (playerScore == 5 || computerScore == 5) {
+        if (playerScore > computerScore) {
+            console.log(`You Won! Final Score - player: ${playerScore}, computer: ${computerScore}`)
+        } else {
+            console.log(`Computer Wins :( Final Score - player: ${playerScore}, computer: ${computerScore}`)
+        }
+    }
+
 }
 
-if (playerScore > computerScore) {
-    console.log(`You Won! Final Score - player: ${playerScore}, computer: ${computerScore}`)
-} else {
-    console.log(`Computer Wins :( Final Score - player: ${playerScore}, computer: ${computerScore}`)
-}
