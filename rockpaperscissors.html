@@ -4,21 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
+
+    <link rel="stylesheet" href="style.css">
     
 </head>
 <body>
-    <div class="selections">
-        <div data-key="a">
-          <button class="selection btn btnRock">Rock</button>
+    <div class="container">
+    <div class="header">
+        <h1 class="title is-1">Player:<span id="p1Display">0</span> vs. Computer:<span id="p2Display">0</span></h1>
+    </div>  
+        <div class="selections btnGroup">
+            <button class="selection button btnGame">Rock</button>
+            <button class="selection button btnGame">Paper</button>
+            <button class="selection button btnGame">Scissors</button>
         </div>
-        <div data-key="s" class="selection">
-          <button class="btn btnPaper">Paper</button>
+
+        <div class="selections">
+            <button class="selection button btnReset">Reset</button>
         </div>
-        <div data-key="d" class="selection">
-          <button class="btn btnScissors">Scissors</kbd>
-        </div>
+    </div>
 
     <script src="app.js"></script>
 </body>

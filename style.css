@@ -7,12 +7,23 @@ body,html {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  margin: 10vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
 }
 
 .selections {
   display: flex;
   flex: 1;
-  min-height: 100vh;
+  min-height: 20vh;
   align-items: center;
   justify-content: center;
 }
@@ -20,15 +31,27 @@ body,html {
 .selection {
   border: .4rem solid black;
   border-radius: .5rem;
-  margin: 1rem;
+  margin: 3rem;
   font-size: 1.5rem;
   padding: 1rem .5rem;
   transition: all .07s ease;
-  width: 30rem;
+  width: 25rem;
   text-align: center;
   color: white;
   background: rgba(0,0,0,0.4);
   text-shadow: 0 0 .5rem black;
+}
+
+.selection-disabled {
+  border: .4rem solid rgb(55, 53, 53);
+  border-radius: .5rem;
+  margin: 2rem;
+  font-size: 1.5rem;
+  padding: 1rem .5rem;
+  width: 25rem;
+  text-align: center;
+  color: rgb(159, 151, 151);
+  background: rgba(97, 93, 93);
 }
 
 .playing {
@@ -37,7 +60,10 @@ body,html {
   box-shadow: 0 0 1rem #ffc600;
 }
 
-.kbd {
-  display: block;
-  font-size: 4rem;
+.winner {
+  color: green
+}
+
+.loser {
+  color: rgb(246, 33, 51)
 }
